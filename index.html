@@ -29,20 +29,33 @@
     <section id="seccion1">
         <h1>Bienvenido!</h1>
     </section>
-    <section id="proyectos">
-        <div class="proyecto">
-            <p>Python</p>
-            <img src="https://www.pngkey.com/png/detail/70-701572_python-basics-for-data-science-python-development.png" alt="Python Basics For Data Science - Python Development@pngkey.com">
-        </div>
-        <div class="proyecto">
-            <p>Mysql</p>
-        <img src="https://www.pngkey.com/png/detail/336-3362794_mysql-optimization-consultation-html-css-js-php-mysql.png" alt="Mysql Optimization Consultation - Html Css Js Php Mysql@pngkey.com">
-        </div>       
+    <section id="proyectos">      
     </section>
 </body>
 <script>
+    const datos = [{
+        img: "https://www.pngkey.com/png/detail/70-701572_python-basics-for-data-science-python-development.png",
+        desc: "Python2"
+    },
+    {
+        img: "https://www.pngkey.com/png/detail/336-3362794_mysql-optimization-consultation-html-css-js-php-mysql.png",
+        desc: "Mysql2"
+    }];
     let proyectos = document.querySelector('#proyectos');
     console.log(proyectos);
-    proyectos.style.background = 'red';
+
+    function dinamico(src,desc){
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = src;
+        let p = document.createElement("p");
+        p.innerHTML = desc;
+        div.appendChild(img);
+        div.appendChild(p);
+        proyectos.appendChild(div);
+    }
+    
+    datos.forEach(({img, desc}) => dinamico(img, desc));
+
 </script>
 </html>
