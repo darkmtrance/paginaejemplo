@@ -4,18 +4,45 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Mi primera pagina</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!--link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script-->
+    <style type="text/css">
+        body {
+            color: purple;
+            background-color: #d8da3d;
+        }
+        #seccion1 {
+            font-size: 60px;
+            text-align: center;
+            background-image: url(https://www.pngkey.com/png/detail/86-868587_blue-sky-background-png-sunny-daycloud-overlay-psd.png);
+            background-size: contain;
+        }
+        #proyectos {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .proyecto img {
+            width: 50%;
+        }
+
+    </style>
 </head>
 <body>
-    <section>
+    <section id="seccion1">
         <h1>Bienvenido!</h1>
     </section>
-    <section>
-        <p>Texto1</p>
-        <img src="https://www.pngkey.com/png/detail/70-701572_python-basics-for-data-science-python-development.png" alt="Python Basics For Data Science - Python Development@pngkey.com">
-        <p>Texto2</p>
+    <section id="proyectos">
+        <div class="proyecto">
+            <p>Python</p>
+            <img src="https://www.pngkey.com/png/detail/70-701572_python-basics-for-data-science-python-development.png" alt="Python Basics For Data Science - Python Development@pngkey.com">
+        </div>
+        <div class="proyecto">
+            <p>Mysql</p>
         <img src="https://www.pngkey.com/png/detail/336-3362794_mysql-optimization-consultation-html-css-js-php-mysql.png" alt="Mysql Optimization Consultation - Html Css Js Php Mysql@pngkey.com">
+        </div>       
     </section>
 </body>
+<script>
+    let proyectos = document.querySelector('#proyectos');
+    console.log(proyectos);
+    proyectos.style.background = 'red';
+</script>
 </html>
